@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "pretest": "echo 'about to run the test...'",
+    "posttest": "echo 'the test has been run!'",
+    "start": "node ./app.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
