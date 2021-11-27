@@ -3,10 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "pretest": "echo 'about to run the test...'",
-    "posttest": "echo 'the test has been run!'",
+    "pretest": "echo 'Test Starting...'",
+    "posttest": "echo 'Test Ended'",
     "start": "node ./app.js",
-    "test": "jest",
+    "test": "jest --",
     "coverage": "jest --collectCoverage --"
   },
   "dependencies": {
