@@ -5,7 +5,9 @@
   "scripts": {
     "pretest": "echo 'about to run the test...'",
     "posttest": "echo 'the test has been run!'",
-    "start": "node ./app.js"
+    "start": "node ./app.js",
+    "test": "jest",
+    "coverage": "jest --collectCoverage --"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -14,5 +16,8 @@
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
     "pug": "2.0.0-beta11"
+  },
+  "devDependencies": {
+    "jest": "^27.3.1"
   }
 }

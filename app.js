@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var coverageRouter = require('./routes/coverage');
 
 var app = express();
 
@@ -21,14 +22,23 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/coverage', coverageRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
 });
 
+// This call back just tells us that the server has started
+function listen() {
+  var host = server.address().address;
+  var port = server.address().port;
+  console.log('Listening at http://' + host + ':' + port);
+}
+
 // error handler
 app.use(function(err, req, res, next) {
+
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
@@ -38,4 +48,9 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+// **********************************
+// Students might need to add this!!!
+var server = app.listen(process.env.PORT || 3000, listen);
+
 module.exports = app;
+
