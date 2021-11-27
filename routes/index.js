@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'URL Filter' });
 });
 
 router.post('/filter', function(req, res, next) {
@@ -20,7 +20,7 @@ router.post('/filter', function(req, res, next) {
     finalURLArray.push(item);
   });
 
-  res.render('index', { urls: filter.filterByTerm(finalURLArray, searchTerm) });
+  res.render('index', { urls: filter.filterByTerm(finalURLArray, searchTerm), title: 'URL Filter' });
 });
 
 module.exports = router;

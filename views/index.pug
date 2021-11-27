@@ -1,12 +1,12 @@
 extends layout
 
 block content
-  h1 URL Filter
+  h1(id='pageheader') URL Filter
   h2 Input URLs
   p
     form(action="/filter", method="post")
       p 
-        input(type='text', id='filterTerm', name='filterTerm', value='', placeholder='Filter Term')
+        input(id='filterTerm', type='text', name='filterTerm', value='', placeholder='Filter Term')
       p
         textarea(id='inputURLs', name='inputURLs', placeholder='Enter URLs', rows='5')
       input(type='submit', value='Filter By URL')

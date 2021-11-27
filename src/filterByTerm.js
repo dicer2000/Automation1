@@ -1,4 +1,3 @@
-module.exports = { filterByTerm: filterByTerm };
 
 function filterByTerm(inputArr, searchTerm) {
     if (!searchTerm) throw Error("SearchTerm cannot be empty");
@@ -10,3 +9,4 @@ function filterByTerm(inputArr, searchTerm) {
     });
   }
   
+  module.exports = { filterByTerm: filterByTerm };
